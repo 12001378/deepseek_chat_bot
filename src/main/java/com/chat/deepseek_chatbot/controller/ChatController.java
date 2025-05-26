@@ -1,6 +1,4 @@
 package com.chat.deepseek_chatbot.controller;
-
-import com.chat.deepseek_chatbot.Repository.TrainedQARepository;
 import com.chat.deepseek_chatbot.payload.ChatRequest;
 import com.chat.deepseek_chatbot.payload.ChatResponse;
 import com.chat.deepseek_chatbot.payload.TraningDTO;
