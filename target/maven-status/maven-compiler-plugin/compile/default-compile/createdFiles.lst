@@ -1,0 +1,7 @@
+com\chat\deepseek_chatbot\payload\ChatRequest.class
+com\chat\deepseek_chatbot\controller\CallController.class
+com\chat\deepseek_chatbot\DeepseekChatBotApplication.class
+com\chat\deepseek_chatbot\service\TrainedService.class
+com\chat\deepseek_chatbot\payload\ChatResponse.class
+com\chat\deepseek_chatbot\service\DeepSeekService.class
+com\chat\deepseek_chatbot\controller\ChatController.class
