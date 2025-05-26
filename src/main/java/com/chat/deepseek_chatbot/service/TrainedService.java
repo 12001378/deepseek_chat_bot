@@ -30,7 +30,6 @@ public class TrainedService {
         if(map.containsKey(chatRequest.getQuestion())){
             response.setAnswer(map.get(chatRequest.getQuestion()));
         }
-
         return response;
 
     }

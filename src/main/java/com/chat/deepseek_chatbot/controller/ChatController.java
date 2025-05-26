@@ -1,10 +1,14 @@
 package com.chat.deepseek_chatbot.controller;
 
+import com.chat.deepseek_chatbot.Repository.TrainedQARepository;
 import com.chat.deepseek_chatbot.payload.ChatRequest;
 import com.chat.deepseek_chatbot.payload.ChatResponse;
+import com.chat.deepseek_chatbot.payload.TraningDTO;
 import com.chat.deepseek_chatbot.service.DeepSeekService;
+import com.chat.deepseek_chatbot.service.TrainedQAService;
 import com.chat.deepseek_chatbot.service.TrainedService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +24,10 @@ public class ChatController {
     private DeepSeekService deepSeekService;
     @Autowired
     private TrainedService trainedService;
+    @Autowired
+    private TrainedQARepository trainedQARepository;
+    @Autowired
+    private TrainedQAService trainedQAService;
 
     @GetMapping("/")
     public String resp() {
@@ -62,6 +70,21 @@ public class ChatController {
             requests.add(new ChatRequest(question));
         }
         return ResponseEntity.ok(requests);
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> create(@RequestBody  TraningDTO traningDTO) throws Exception {
+        if(!traningDTO.getQuestion().trim().equals("") && !traningDTO.getAnswer().trim().equals("")) {
+            trainedQAService.trainQA(traningDTO);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity<List<TraningDTO>> getAllTraningDTO() throws Exception {
+        return ResponseEntity.ok(trainedQAService.trainQAList());
     }
 
 }
