@@ -25,8 +25,6 @@ public class ChatController {
     @Autowired
     private TrainedService trainedService;
     @Autowired
-    private TrainedQARepository trainedQARepository;
-    @Autowired
     private TrainedQAService trainedQAService;
 
     @GetMapping("/")
