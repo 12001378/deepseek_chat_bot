@@ -1,7 +1,13 @@
-com\chat\deepseek_chatbot\payload\ChatRequest.class
+com\chat\deepseek_chatbot\service\TrainedQAService.class
+com\chat\deepseek_chatbot\Repository\TrainedQARepository.class
 com\chat\deepseek_chatbot\controller\CallController.class
-com\chat\deepseek_chatbot\DeepseekChatBotApplication.class
+com\chat\deepseek_chatbot\payload\TraningDTO.class
 com\chat\deepseek_chatbot\service\TrainedService.class
-com\chat\deepseek_chatbot\payload\ChatResponse.class
+com\chat\deepseek_chatbot\entity\TrainedQA.class
 com\chat\deepseek_chatbot\service\DeepSeekService.class
+com\chat\deepseek_chatbot\payload\ChatRequest.class
+com\chat\deepseek_chatbot\DeepseekChatBotApplication.class
+com\chat\deepseek_chatbot\payload\ChatResponse.class
+com\chat\deepseek_chatbot\Mapper\TrainedQAMapper.class
+com\chat\deepseek_chatbot\service\TrainedQAServiceImpl.class
 com\chat\deepseek_chatbot\controller\ChatController.class
